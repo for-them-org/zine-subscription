@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://zine-subscription.forthem.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Anton&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="/hero-hand.png" fetchpriority="high">
 
     <!-- Google Tag Manager -->
@@ -209,6 +209,27 @@
 
         footer { background: var(--ink); color: rgba(245,241,230,0.7); padding: 1.5rem 1.25rem 8rem; text-align: center; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
         @media (min-width: 880px) { footer { padding: 2rem 2rem 7.5rem; } }
+        /* ============ LONG BODY COPY: Arial Narrow (Em 2026-11-17) ============
+           Paragraph-length text only. Headlines stay Anton; kickers, labels, prices,
+           buttons and plan cards stay Roboto Mono. Roboto Condensed is the web-font
+           stand-in where Arial Narrow is not installed (most phones). Delete this
+           block to revert to Roboto Mono body copy. */
+        .pitch .lede, .inside .sub, .inside-flow figcaption, .stories-caption,
+        .collection p:not([class]), .gift-copy p:not([class]), .review p:not([class]),
+        details p, .upsell p:not([class]) {
+            font-family: 'Arial Narrow', 'Roboto Condensed', Arial, sans-serif;
+            letter-spacing: 0;
+            font-size-adjust: none;
+        }
+        .pitch .lede { font-size: clamp(1.12rem, 1.8vw, 1.28rem); }
+        .inside .sub { font-size: 1.05rem; }
+        .inside-flow figcaption { font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.4; }
+        .stories-caption { font-size: 1rem; line-height: 1.35; }
+        .collection p:not([class]), .review p:not([class]), details p { font-size: 1.1rem; }
+        .gift-copy p:not([class]) { font-size: 1.08rem; }
+        .upsell p:not([class]) { font-size: 1.02rem; }
+        .inside-flow figcaption .page-kicker, .stories-caption .page-kicker { font-family: 'Roboto Mono', monospace; }
+        @media (min-width: 880px) { .inside-flow figcaption { font-size: clamp(1.1rem, 1.7vw, 1.3rem); } }
     </style>
 </head>
 <body>
